@@ -2,9 +2,8 @@ export default {
   User: {
     issues: (parent, args, context, info) => parent.getIssues(),
     team: (parent, args, context, info) => parent.getTeam(),
-    role: (parent, args, context, info) => parent.getRole(),
   },
-  UserRole: {
+  Team: {
     users: (parent, args, context, info) => parent.getUsers(),
   },
   Sprint: {
@@ -30,6 +29,8 @@ export default {
     issue: (parent, { id }, { db }, info) => db.issue.findByPk(id),
     users: (parent, args, { db }, info) => db.user.findAll(),
     user: (parent, { id }, { db }, info) => db.user.findByPk(id),
+    team: (parent, { id }, { db }, info) => db.team.findByPk(id),
+    teams: (parent, args, { db }, info) => db.team.findAll(),
     labels: (parent, args, { db }, info) => db.label.findAll(),
     label: (parent, { id }, { db }, info) => db.label.findByPk(id),
   },

@@ -15,5 +15,10 @@ module.exports = (sequelize, DataTypes) => {
       as: "sprints",
     });
   };
+
+  Team.findAll().then(teams => teams);
+
+  Team.findByPk().then(team => team);
+
   return Team;
 };

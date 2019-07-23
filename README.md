@@ -1,1 +1,14 @@
-# graphql-hackerthon
+# GraphQL Hackerthon
+
+## Installation
+
+#### Setup the database and api:
+```shell
+docker-compose up --build
+```
+
+#### To run the frontend dev server:
+
+```shell
+cd app && npm install && npm start
+```

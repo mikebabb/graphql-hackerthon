@@ -18,11 +18,11 @@ export default gql(`
     email: String!
     issues: [Issue!]!
     team: Team!
-    role: UserRole!
   }
   type Team {
-    id: ID!,
+    id: ID!
     name: String!
+    users: [User!]!
   }
   type Issue {
     id: ID!
@@ -43,12 +43,6 @@ export default gql(`
     title: String!
     slug: String!
   }
-  type UserRole {
-    id: ID!
-    name: String!
-    description: String!
-    users: [User!]!
-  }
   type Query {
     sprints: [Sprint!]!
     sprint(id: ID!): Sprint
@@ -56,6 +50,8 @@ export default gql(`
     issue(id: ID!): Issue
     user(id: ID!): User
     users: [User!]!
+    team(id: ID!): Team
+    teams: [Team!]!
     label(id: ID!): Label
     labels: [Label!]!
   }
