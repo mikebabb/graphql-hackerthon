@@ -13,6 +13,8 @@ services:
       - db
     networks:
       - app-tier
+    environment:
+      WAIT_HOSTS: db:3306
 
   db:
     image: mysql:5.7
