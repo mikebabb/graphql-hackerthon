@@ -16,8 +16,7 @@ ENV NODE_ENV development
 # Make port 8000 available to the world outside this container
 EXPOSE 8000
 
-## THE LIFE SAVER
 ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.2.1/wait /wait
 RUN chmod +x /wait
 
-CMD /wait && npm run start
+CMD /wait && npm run db-reset && run start

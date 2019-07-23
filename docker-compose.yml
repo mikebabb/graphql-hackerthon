@@ -3,7 +3,7 @@ services:
   api:
     build: ./api
     container_name: hackers_node
-    command: npm run start
+    # command: npm run start
     volumes:
       - ./api/:/home/app
       - /home/app/node_modules
