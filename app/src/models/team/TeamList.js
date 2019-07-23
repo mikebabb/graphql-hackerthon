@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/react-hooks";
+
+import Layout from "layouts/Default";
 import { GET_TEAMS } from "./queries";
 
 const TeamList = () => {
@@ -10,13 +12,15 @@ const TeamList = () => {
   if (error) return <h2>{`Error: ${error}`}</h2>;
 
   return (
-    <ul>
-      {data.teams.map(team => (
-        <li key={team.id}>
-          <Link to={`/teams/${team.id}`}>{team.name}</Link>
-        </li>
-      ))}
-    </ul>
+    <Layout>
+      <ul>
+        {data.teams.map(team => (
+          <li key={team.id}>
+            <Link to={`/teams/${team.id}`}>{team.name}</Link>
+          </li>
+        ))}
+      </ul>
+    </Layout>
   );
 };
 
