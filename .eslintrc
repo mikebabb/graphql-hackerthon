@@ -1,0 +1,43 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/react"
+  ],
+  "plugins": ["react", "react-hooks", "prettier", "import"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true,
+    "es6": true
+  },
+  "parser": "babel-eslint",
+  "globals": {
+    "__GIT_REVISION__": true,
+    "asciinema": false
+  },
+  "settings": {
+    "import/resolver": "webpack",
+    "import/external-module-folders": ["node_modules", "packages"]
+  },
+  "rules": {
+    "react/no-deprecated": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "import/order": [
+      "warn",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "newlines-between": "always"
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+version: "3"
+services:
+  api:
+    build: ./api
+    container_name: hackers_node
+    command: npm run start
+    volumes:
+      - ./api/:/home/app
+      - /home/app/node_modules
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    networks:
+      - app-tier
+
+  db:
+    image: mysql:5.7
+    restart: always
+    container_name: hackers_db
+    environment:
+      MYSQL_DATABASE: hackers
+      MYSQL_USER: root
+      MYSQL_PASSWORD: changeme
+      MYSQL_ROOT_PASSWORD: changeme
+      # MYSQL_PORT: 3307
+    ports:
+      - "3307:3306"
+    expose:
+      - "3307"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - app-tier
+
+volumes:
+  db_data:
+    driver: "local"
+
+networks:
+  app-tier:
+    driver: bridge

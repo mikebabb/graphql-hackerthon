@@ -1,0 +1,49 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "description": "Hackerthon backend",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --entry ./app/js/index.js --output-filename bundle.min.js --output-path ./app/js ",
+    "start": "./node_modules/nodemon/bin/nodemon.js --exec babel-node index.js",
+    "sequelize-skeleton": "./node_modules/sequelize-cli/lib/sequelize init:models; ./node_modules/sequelize-cli/lib/sequelize init:config",
+    "test": "test",
+    "db-reset": "sequelize db:migrate:undo:all && sequelize db:migrate && sequelize db:seed:all"
+  },
+  "author": "James Towers <james.f.towers@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^2.6.1",
+    "babel-eslint": "^10.0.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "graphql": "^14.3.1",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.8.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "eslint": "^5.0.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-prettier": "^2.6.1",
+    "eslint-plugin-react-hooks": "^1.6.0",
+    "faker": "^4.1.0",
+    "lodash.random": "^3.2.0",
+    "lodash.times": "^4.3.2",
+    "nodemon": "^1.19.1",
+    "npm": "^6.9.0",
+    "prettier": "^1.13.7",
+    "sequelize-cli": "^5.5.0",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4"
+  }
+}

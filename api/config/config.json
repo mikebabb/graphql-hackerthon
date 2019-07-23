@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "root",
+    "password": "changeme",
+    "database": "hackers",
+    "host": "hackers_db",
+    "port": "3306",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "db",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "db",
+    "dialect": "mysql"
+  }
+}
