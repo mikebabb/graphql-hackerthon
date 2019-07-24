@@ -39,7 +39,7 @@ module.exports = {
       .then(() => {
         queryInterface.addConstraint("issues", ["sprintId"], {
           type: "FOREIGN KEY",
-          title: "sprintId",
+          name: "sprintId",
           references: {
             table: "sprints",
             field: "id",

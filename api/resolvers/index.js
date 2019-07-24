@@ -21,20 +21,40 @@ export default {
     children: (parent, args, context, info) => parent.getChildren(),
   },
   Query: {
-    sprints: (parent, args, { db }, info) => db.sprint.findAll(),
+    sprints: (parent, args, { db }, info) =>
+      db.sprint.findAll({
+        where: {
+          ...args,
+        },
+      }),
     sprint: (parent, { id }, { db }, info) => db.sprint.findByPk(id),
     issues: (parent, args, { db }, info) =>
       db.issue.findAll({
         where: {
-          sprintId: args.sprintId,
+          ...args,
         },
       }),
     issue: (parent, { id }, { db }, info) => db.issue.findByPk(id),
-    users: (parent, args, { db }, info) => db.user.findAll(),
+    users: (parent, args, { db }, info) =>
+      db.user.findAll({
+        where: {
+          ...args,
+        },
+      }),
     user: (parent, { id }, { db }, info) => db.user.findByPk(id),
     team: (parent, { id }, { db }, info) => db.team.findByPk(id),
-    teams: (parent, args, { db }, info) => db.team.findAll(),
-    labels: (parent, args, { db }, info) => db.label.findAll(),
+    teams: (parent, args, { db }, info) =>
+      db.team.findAll({
+        where: {
+          ...args,
+        },
+      }),
+    labels: (parent, args, { db }, info) =>
+      db.label.findAll({
+        where: {
+          ...args,
+        },
+      }),
     label: (parent, { id }, { db }, info) => db.label.findByPk(id),
   },
   Mutation: {

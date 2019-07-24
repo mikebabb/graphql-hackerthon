@@ -4,25 +4,26 @@ export default gql(`
   type Sprint {
     id: ID!
     title: String!
-    team: Team!
-    startedAt: String!
-    endedAt: String!
-    issues: [Issue!]!
+    team: Team
+    startedAt: String
+    endedAt: String
+    issues: [Issue!]
   }
   type User {
     id: ID!
     firstName: String!
     lastName: String!
     fullName: String!
-    image: String!
+    image: String
     email: String!
-    issues: [Issue!]!
-    team: Team!
+    issues: [Issue!]
+    teamId: ID
+    team: Team
   }
   type Team {
     id: ID!
     name: String!
-    users: [User!]!
+    users: [User!]
   }
   type Issue {
     id: ID!
@@ -49,12 +50,19 @@ export default gql(`
     issues: [Issue!]!
   }
   type Query {
-    sprints: [Sprint!]!
+    sprints(teamId: ID): [Sprint!]!
     sprint(id: ID!): Sprint
-    issues(sprintId: ID): [Issue!]!
+    issues(
+      sprintId: ID,
+      type: String,
+      status: ID,
+      parentId: ID,
+      assigneeId: ID,
+      reporterId: ID
+    ): [Issue!]!
     issue(id: ID!): Issue
-    user(id: ID!): User
-    users: [User!]!
+    user(id: ID): User
+    users(teamId: ID): [User!]!
     team(id: ID!): Team
     teams: [Team!]!
     label(id: ID!): Label
