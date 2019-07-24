@@ -46,6 +46,7 @@ export default gql(`
   type Status {
     id: ID!
     title: String!
+    issues: [Issue!]!
   }
   type Query {
     sprints: [Sprint!]!

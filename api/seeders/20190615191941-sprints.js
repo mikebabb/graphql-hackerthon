@@ -8,7 +8,7 @@ module.exports = {
     queryInterface.bulkInsert(
       "sprints",
       times(4, () => ({
-        name: faker.lorem.words(3),
+        title: faker.lorem.words(3),
         teamId: random(1, 3),
         startedAt: faker.date.recent(10),
         endedAt: faker.date.recent(-10),

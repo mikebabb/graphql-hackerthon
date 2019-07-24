@@ -36,11 +36,6 @@ module.exports = (sequelize, DataTypes) => {
       sourceKey: "id",
     });
     User.belongsTo(models.team);
-    User.belongsTo(models.userRole, {
-      foreignKey: "roleId",
-      as: "role",
-      allowNull: true,
-    });
   };
 
   User.findAll().then(users => users);
