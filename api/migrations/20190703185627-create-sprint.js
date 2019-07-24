@@ -9,7 +9,7 @@ module.exports = {
           primaryKey: true,
           type: Sequelize.INTEGER,
         },
-        name: {
+        title: {
           type: Sequelize.STRING,
         },
         teamId: {
@@ -39,7 +39,7 @@ module.exports = {
       .then(() => {
         queryInterface.addConstraint("issues", ["sprintId"], {
           type: "FOREIGN KEY",
-          name: "sprintId",
+          title: "sprintId",
           references: {
             table: "sprints",
             field: "id",

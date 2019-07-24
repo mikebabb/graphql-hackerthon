@@ -10,6 +10,9 @@ export default {
     issues: (parent, args, context, info) => parent.getIssues(),
     team: (parent, args, context, info) => parent.getTeam(),
   },
+  Status: {
+    issues: (parent, args, context, info) => parent.getIssues(),
+  },
   Issue: {
     assignee: (parent, args, context, info) => parent.getAssignee(),
     reporter: (parent, args, context, info) => parent.getReporter(),

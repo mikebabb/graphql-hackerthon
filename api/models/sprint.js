@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const Sprint = sequelize.define(
     "sprint",
     {
-      name: DataTypes.STRING,
+      title: DataTypes.STRING,
       teamId: DataTypes.INTEGER,
       startedAt: DataTypes.DATE,
       endedAt: DataTypes.DATE,

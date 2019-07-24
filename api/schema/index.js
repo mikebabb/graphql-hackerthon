@@ -3,7 +3,7 @@ import { gql } from "apollo-server-express";
 export default gql(`
   type Sprint {
     id: ID!
-    name: String!
+    title: String!
     team: Team!
     startedAt: String!
     endedAt: String!
@@ -42,6 +42,10 @@ export default gql(`
     id: ID!
     title: String!
     slug: String!
+  }
+  type Status {
+    id: ID!
+    title: String!
   }
   type Query {
     sprints: [Sprint!]!
