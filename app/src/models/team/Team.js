@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 
-import Layout from "layouts/Default";
+import withLayout from "components/withLayout";
 import { GET_TEAM } from "./queries";
 
 const TeamList = ({ match }) => {
@@ -16,14 +16,12 @@ const TeamList = ({ match }) => {
   if (error) return <h2>{`Error: ${error}`}</h2>;
 
   return (
-    <Layout>
-      <ul>
-        {data.team.users.map(user => (
-          <li key={user.id}>{user.fullName}</li>
-        ))}
-      </ul>
-    </Layout>
+    <ul>
+      {data.team.users.map(user => (
+        <li key={user.id}>{user.fullName}</li>
+      ))}
+    </ul>
   );
 };
 
-export default TeamList;
+export default withLayout(TeamList);
