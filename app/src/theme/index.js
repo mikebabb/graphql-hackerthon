@@ -1,6 +1,6 @@
 import palette from "./palette";
 import spacing from "./spacing";
-import typography from "./palette";
+import typography from "./typography";
 
 export default {
   palette,

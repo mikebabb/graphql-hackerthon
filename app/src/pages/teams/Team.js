@@ -2,7 +2,9 @@ import React from "react";
 import { useQuery } from "@apollo/react-hooks";
 
 import withLayout from "components/withLayout";
-import { GET_TEAM } from "./queries";
+
+import { PageHeader, List, ListItem, Spinner } from "../../mate";
+import { GET_TEAM } from "../../models/team/queries";
 
 const TeamList = ({ match }) => {
   const { params } = match;
@@ -12,15 +14,18 @@ const TeamList = ({ match }) => {
     },
   });
 
-  if (loading) return <h3>Loading...</h3>;
+  if (loading) return <Spinner />;
   if (error) return <h2>{`Error: ${error}`}</h2>;
 
   return (
-    <ul>
-      {data.team.users.map(user => (
-        <li key={user.id}>{user.fullName}</li>
-      ))}
-    </ul>
+    <React.Fragment>
+      <PageHeader>Team {data.team.name}</PageHeader>
+      <List>
+        {data.team.users.map(user => (
+          <ListItem key={user.id}>{user.fullName}</ListItem>
+        ))}
+      </List>
+    </React.Fragment>
   );
 };
 

@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import Teams from "../models/team/TeamList";
-import Team from "../models/team/Team";
+import Teams from "../pages/teams/TeamList";
+import Team from "../pages/teams/Team";
 
 const AppRouter = () => (
   <BrowserRouter>
