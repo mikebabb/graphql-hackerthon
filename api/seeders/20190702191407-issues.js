@@ -11,7 +11,7 @@ module.exports = {
         times(15, () => ({
           title: faker.lorem.sentence(),
           description: faker.lorem.sentences(4),
-          status: random(1, 5),
+          statusId: random(1, 6),
           type: faker.random.arrayElement(["bug", "task"]),
           sprintId: random(1, 4),
           storyPoints: faker.random.arrayElement([1, 2, 3, 5, 8, 13, 21]),

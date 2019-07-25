@@ -17,6 +17,7 @@ export default {
     assignee: (parent, args, context, info) => parent.getAssignee(),
     reporter: (parent, args, context, info) => parent.getReporter(),
     sprint: (parent, args, context, info) => parent.getSprint(),
+    status: (parent, args, context, info) => parent.getStatus(),
     labels: (parent, args, context, info) => parent.getLabels(),
     children: (parent, args, context, info) => parent.getChildren(),
   },
@@ -28,6 +29,8 @@ export default {
         },
       }),
     sprint: (parent, { id }, { db }, info) => db.sprint.findByPk(id),
+    status: (parent, { id }, { db }, info) => db.status.findByPk(id),
+    statuses: (parent, { id }, { db }, info) => db.status.findAll(),
     issues: (parent, args, { db }, info) =>
       db.issue.findAll({
         where: {

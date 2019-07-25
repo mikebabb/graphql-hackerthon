@@ -29,7 +29,7 @@ export default gql(`
     id: ID!
     title: String!
     description: String
-    status: Int!
+    status: Status
     storyPoints: Int
     assigneeId: ID
     assignee: User
@@ -47,7 +47,7 @@ export default gql(`
   type Status {
     id: ID!
     title: String!
-    issues: [Issue!]!
+    issues: [Issue!]
   }
   type Query {
     sprints(teamId: ID): [Sprint!]!
@@ -61,6 +61,8 @@ export default gql(`
       reporterId: ID
     ): [Issue!]!
     issue(id: ID!): Issue
+    status(id: ID!): Status
+    statuses: [Status!]
     user(id: ID): User
     users(teamId: ID): [User!]!
     team(id: ID!): Team

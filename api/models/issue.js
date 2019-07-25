@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       title: DataTypes.STRING,
       description: DataTypes.TEXT,
-      status: DataTypes.INTEGER,
+      statusId: DataTypes.INTEGER,
       parentId: DataTypes.INTEGER,
       storyPoints: DataTypes.INTEGER,
       assigneeId: DataTypes.INTEGER,
@@ -21,27 +21,32 @@ module.exports = (sequelize, DataTypes) => {
     });
     Issue.hasMany(models.issue, {
       as: "children",
-      foreignKey: "id",
+      foreignKey: "parentId",
       sourceKey: "id",
     });
     Issue.belongsTo(models.user, {
-      foreignKey: "assigneeId",
       as: "assignee",
+      foreignKey: "assigneeId",
       allowNull: true,
     });
+    Issue.belongsTo(models.status, {
+      as: "status",
+      foreignKey: "statusId",
+      allowNull: false,
+    });
     Issue.belongsTo(models.user, {
-      foreignKey: "reporterId",
       as: "reporter",
+      foreignKey: "reporterId",
       allowNull: true,
     });
     Issue.belongsTo(models.sprint, {
-      foreignKey: "sprintId",
       as: "sprint",
+      foreignKey: "sprintId",
       allowNull: true,
     });
     Issue.belongsToMany(models.label, {
-      through: "issueLabels",
       as: "labels",
+      through: "issueLabels",
       foreignKey: "labelId",
     });
   };

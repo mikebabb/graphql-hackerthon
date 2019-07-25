@@ -17,8 +17,15 @@ module.exports = {
       description: {
         type: Sequelize.TEXT,
       },
-      status: {
+      statusId: {
         type: Sequelize.INTEGER,
+        defaultValue: 1,
+        references: {
+          model: "statuses",
+          key: "id",
+        },
+        onUpdate: "CASCADE",
+        onDelete: "SET NULL",
       },
       parentId: {
         type: Sequelize.INTEGER,
