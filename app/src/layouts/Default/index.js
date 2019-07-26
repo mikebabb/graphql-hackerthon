@@ -11,6 +11,7 @@ const Default = ({ children }) => (
       <ul>
         <NavItem>
           <Link to="/teams">Teams</Link>
+          <Link to="/issues">Issues</Link>
         </NavItem>
       </ul>
     </Nav>
