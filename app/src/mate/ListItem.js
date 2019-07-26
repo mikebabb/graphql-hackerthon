@@ -3,7 +3,8 @@ import styled from "styled-components";
 export default styled.li`
   background: ${({ theme }) => theme.palette.background};
   border-radius: 4px;
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 1rem;
   margin-bottom: 6px;
 `;

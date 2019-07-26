@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       title: DataTypes.STRING,
       description: DataTypes.TEXT,
+      type: DataTypes.TEXT,
       statusId: DataTypes.INTEGER,
       parentId: DataTypes.INTEGER,
       storyPoints: DataTypes.INTEGER,

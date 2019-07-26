@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/react-hooks";
 
 import withLayout from "components/withLayout";
 
-import { PageHeader, List, ListItem, Spinner } from "../../mate";
+import { Avatar, PageHeader, List, ListItem, Spinner } from "../../mate";
 import { GET_TEAM } from "../../models/team/queries";
 
 const TeamList = ({ match }) => {
@@ -22,7 +22,12 @@ const TeamList = ({ match }) => {
       <PageHeader>Team {data.team.name}</PageHeader>
       <List>
         {data.team.users.map(user => (
-          <ListItem key={user.id}>{user.fullName}</ListItem>
+          <ListItem key={user.id}>
+            <Avatar>
+              <img src={user.image} alt={`${user.fullName}'s avatar`} />
+            </Avatar>
+            {user.fullName}
+          </ListItem>
         ))}
       </List>
     </React.Fragment>

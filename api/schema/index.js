@@ -35,6 +35,7 @@ export default gql(`
     assignee: User
     reporterId: ID
     reporter: User
+    type: String
     labels: [Label!]!
     sprint: Sprint
     children: [Issue!]!
