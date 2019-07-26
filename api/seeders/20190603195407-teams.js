@@ -7,7 +7,6 @@ module.exports = {
       [
         { name: "Wallace", createdAt: new Date(), updatedAt: new Date() },
         { name: "Gromit", createdAt: new Date(), updatedAt: new Date() },
-        { name: "Feathers", createdAt: new Date(), updatedAt: new Date() },
       ],
       {}
     );

@@ -13,7 +13,7 @@ module.exports = {
         email: faker.internet.email(),
         image: faker.image.avatar(),
         roleId: random(1, 4),
-        teamId: random(1, 3),
+        teamId: random(1, 2),
         createdAt: new Date(),
         updatedAt: new Date(),
       })),
