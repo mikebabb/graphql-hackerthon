@@ -76,9 +76,9 @@ export default gql(`
     createIssue(title: String, description: String): Issue!
     updateIssue(
       id: ID!
-      title: String!
+      title: String
       description: String
-      status: Int
+      statusId: ID
       storyPoints: Int
       reporterId: Int
       assigneeId: Int
