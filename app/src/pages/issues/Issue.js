@@ -5,6 +5,7 @@ import withLayout from "components/withLayout";
 
 import { PageHeader, Spinner } from "../../mate";
 import { GET_ISSUE } from "../../models/issues/queries";
+import { UPDATE_STORY_POINTS } from "models/issues/mutations";
 
 const Issue = ({ match }) => {
   const { params } = match;
@@ -37,7 +38,12 @@ const Issue = ({ match }) => {
         Status: <span style={{ fontWeight: "bold" }}>{issue.status.title}</span>
       </div>
       <h4 style={{ marginBottom: "0.5rem" }}>Description</h4>
-      <p>{issue.description}</p>
+      <p style={{ marginBottom: "3rem" }}>{issue.description}</p>
+      <label>Story points</label>
+      <input type="number" />
+      <button style={{ width: "12rem" }} onClick={e => console.log("LOL")}>
+        Update Story Points
+      </button>
     </React.Fragment>
   );
 };
