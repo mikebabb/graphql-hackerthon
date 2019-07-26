@@ -4,7 +4,7 @@
 
 #### Setup the database and api:
 ```shell
-docker-compose up --build
+docker-compose up --build db api
 ```
 
 #### To run the frontend dev server:
