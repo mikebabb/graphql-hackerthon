@@ -8,7 +8,7 @@ WORKDIR /home/app/
 COPY . /home/app/
 
 # If you are building your code for production
-RUN npm install --silent --dd
+RUN npm install --silent
 
 # Set environment to "development" by default
 ENV NODE_ENV development

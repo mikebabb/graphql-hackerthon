@@ -55,8 +55,8 @@ export default gql(`
     sprint(id: ID!): Sprint
     issues(
       sprintId: ID,
+      statusId: ID,
       type: String,
-      status: ID,
       parentId: ID,
       assigneeId: ID,
       reporterId: ID
