@@ -7,6 +7,7 @@ export const TEAM_FRAGMENT = gql`
     users {
       fullName
       image
+      email
     }
   }
 `;

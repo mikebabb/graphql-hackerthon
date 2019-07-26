@@ -7,4 +7,9 @@ export default styled.li`
   align-items: center;
   padding: 1rem;
   margin-bottom: 6px;
+
+  a {
+    display: block;
+    margin-left: 0.5rem;
+  }
 `;

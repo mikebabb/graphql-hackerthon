@@ -26,7 +26,8 @@ const TeamList = ({ match }) => {
             <Avatar>
               <img src={user.image} alt={`${user.fullName}'s avatar`} />
             </Avatar>
-            {user.fullName}
+            <span>{user.fullName}</span>
+            <a href={`mailto:${user.email}`}>{user.email}</a>
           </ListItem>
         ))}
       </List>
