@@ -11,7 +11,7 @@ const IssueList = () => {
   const { data, loading, error } = useQuery(GET_ISSUES);
 
   if (loading) return <Spinner />;
-  if (error) return <div>{error}</div>;
+  if (error) return <h2>{error}</h2>;
 
   return (
     <React.Fragment>

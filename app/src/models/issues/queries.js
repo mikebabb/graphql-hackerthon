@@ -9,3 +9,20 @@ export const GET_ISSUES = gql`
     }
   }
 `;
+
+export const GET_ISSUE = gql`
+  query getIssue($id: ID!) {
+    issue(id: $id) {
+      id
+      title
+      status {
+        title
+      }
+      reporter {
+        fullName
+      }
+      storyPoints
+      description
+    }
+  }
+`;
